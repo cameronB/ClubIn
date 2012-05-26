@@ -2,25 +2,52 @@
 //  AppDelegate.m
 //  ClubIn
 //
-//  Created by Cameron Bradley on 26/05/12.
+//  Created by Cameron Bradley on 29/03/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h"
+
+//Tab Bar Classes
 #import "ClubsViewController.h"
 #import "ProfileViewController.h"
 
+//static string for app (facebook) id
+static NSString* kAppId = @"211325022301565";
+
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window;
+
 @synthesize tabBarController;
+
 @synthesize navigationController;
 
+@synthesize facebook;
+
+@synthesize userPermissions;
+
+- (void)dealloc
+{
+    [window release];
+    [tabBarController release];
+    [navigationController release];
+    [facebook release];
+    [userPermissions release];
+    [super dealloc];
+}
+
+//application did finished launching..
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    //allocate window.
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    //set window background to white
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    
+    //create navigation Controller
+	UINavigationController *localNavigationController;
     
     //create TabBar controller
 	tabBarController = [[UITabBarController alloc] init];
@@ -34,57 +61,117 @@
     //Night Clubs Tab Bar Controller / Navigation Controller / View.
 	ClubsViewController *viewController1;
 	viewController1 = [[ClubsViewController alloc] init];
-	navigationController = [[UINavigationController alloc] initWithRootViewController:viewController1];
-	navigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
+	localNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController1];
+	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
     viewController1.title = @"Clubs";
-    [navigationController.navigationBar setTintColor:[UIColor blackColor]];
-	[localControllersArray addObject:navigationController];
+    
+    [localNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+	[localControllersArray addObject:localNavigationController];
+	[localNavigationController release];
+	[viewController1 release];
     
     //Profile Tab Bar Controller / Navigation Controller / View
-    ProfileViewController *viewController2;
-	viewController2 = [[ProfileViewController alloc] init];
-	navigationController = [[UINavigationController alloc] initWithRootViewController:viewController2];
-	navigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
-    viewController2.title = @"My Profile";
-    [navigationController.navigationBar setTintColor:[UIColor blackColor]];
-	[localControllersArray addObject:navigationController]; 
+    ProfileViewController *viewController3;
+	viewController3 = [[ProfileViewController alloc] init];
+	localNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController3];
+	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
+    viewController3.title = @"My Profile";
+    
+    [localNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+	[localControllersArray addObject:localNavigationController];
+	[localNavigationController release];
+	[viewController3 release];   
     
     //load up our tab bar controller with the view controllers
 	tabBarController.viewControllers = localControllersArray;
     
-    //self.window.rootViewController = self.tabBarController;
-    [self.window addSubview:tabBarController.view];    
+    //release the array because the tab bar controller now has it
+	[localControllersArray release];
     
+    //self.window.rootViewController = self.tabBarController;
+    [self.window addSubview:tabBarController.view];
+    
+    //Do any additional setup after loading the view, typically from a nib.
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    
+    //Initialize Facebook
+    facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:loginViewController];
+    
+    //Check and retrieve authorization information
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    
+    //Initialize user permissions
+    userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
+    
+    //if the facebook session is not valid..
+    if (![[self facebook] isSessionValid]) {
+        
+        NSLog(@"facebook session is not valid");
+        
+        //add LoginViewControllern to front of TabBarControllerView
+        [self.window addSubview:loginViewController.view]; 
+        
+    }
+    
+    //make visisble.
     [self.window makeKeyAndVisible];
+    
+    //allocate splashView
+    splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 480)];
+    
+    //set image backgrouind for splashview
+    splashView.image = [UIImage imageNamed:@"Default.png"];
+    
+    //add splashView to subview
+    [window addSubview:splashView];
+    
+    //bring the splashView subview to front
+    [window bringSubviewToFront:splashView];
+    
+    //begin the animation
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];
+    [UIView setAnimationDelegate:self]; 
+    [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
+    splashView.alpha = 0.0;
+    splashView.frame = CGRectMake(-60, -60, 440, 600);
+    
+    //commit the animation to the UIView
+    [UIView commitAnimations];     
     
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+//start up animation done.
+- (void)startupAnimationDone:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    //[splashView removeFromSuperview];
+    [splashView release];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    //refresh / extend access token if required on application activation / launch
+    [[self facebook] extendAccessTokenIfNeeded];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [self.facebook handleOpenURL:url];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [self.facebook handleOpenURL:url];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // Quit the app
+    exit(1);
 }
 
 @end

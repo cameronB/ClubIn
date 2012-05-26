@@ -42,10 +42,10 @@
     NSString *textLoading;
 }
 
-@property (nonatomic) UIView *refreshHeaderView;
-@property (nonatomic) UILabel *refreshLabel;
-@property (nonatomic) UIImageView *refreshArrow;
-@property (nonatomic) UIActivityIndicatorView *refreshSpinner;
+@property (nonatomic, retain) UIView *refreshHeaderView;
+@property (nonatomic, retain) UILabel *refreshLabel;
+@property (nonatomic, retain) UIImageView *refreshArrow;
+@property (nonatomic, retain) UIActivityIndicatorView *refreshSpinner;
 @property (nonatomic, copy) NSString *textPull;
 @property (nonatomic, copy) NSString *textRelease;
 @property (nonatomic, copy) NSString *textLoading;
