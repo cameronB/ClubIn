@@ -14,7 +14,6 @@
 @synthesize clubLongitude;
 @synthesize clubLatitude;
 @synthesize clubAddress;
-@synthesize clubCheckIns;
 
 @end
 

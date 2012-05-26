@@ -19,9 +19,7 @@
     NSString *clubLatitude;
     //club address
     NSString *clubAddress;
-    //club CheckIns
-    NSString *clubCheckIns;
-    
+
 }
 
 //generate accessors
@@ -30,6 +28,5 @@
 @property (nonatomic, retain) NSString *clubLongitude;
 @property (nonatomic, retain) NSString *clubLatitude;
 @property (nonatomic, retain) NSString *clubAddress;
-@property (nonatomic, retain) NSString *clubCheckIns;
 
 @end

@@ -84,13 +84,6 @@
 		currentClub.clubAddress = currentNameContent;
 	}
     
-    //if element is club checkIns.
-    if ([elementname isEqualToString:@"ClubIn_Clubs_CheckedIn"])
-    {
-        //currentClub = the current node content
-        currentClub.clubCheckIns = currentNameContent;
-    }
-    
     //if next element name is ClubIn_Club / if there is another record
 	if ([elementname isEqualToString:@"ClubIn_Club"]) 
 	{
