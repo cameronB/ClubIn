@@ -149,6 +149,63 @@
     
 }
 
+//adjust height for table cell.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //height of cell
+    return 80.0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    //number of sections
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //count the number of club names that exist
+    return [listOfClubIds count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"] autorelease];
+        //set Selection style (when button is pressed).
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //set the accessory type (the button on the cell) to none.
+        cell.accessoryType = UITableViewCellSelectionStyleNone;
+        
+    }
+    
+    //set the textLabel as the clubName.
+    cell.textLabel.text = [listOfClubNames objectAtIndex:indexPath.row];
+    
+    //set the detailTextLabel as the clubAddress.
+    cell.detailTextLabel.text = [listOfClubAddresses objectAtIndex:indexPath.row];
+    
+    //return the cell
+    return cell;
+}
+
+//table view cell styles.
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //set the background image for the cell.
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell.png"]];
+    
+    //textLabel styles.
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:16.0];
+    cell.textLabel.textColor = [UIColor blackColor];
+    
+    //detailTextLabel styles.
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:10.0];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+}
+
+
+
 - (void)refresh {
     [self performSelector:@selector(addItem) withObject:nil afterDelay:2.0];
 }
