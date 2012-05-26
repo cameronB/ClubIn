@@ -18,6 +18,7 @@
     NSString *selectedClubLatitude;
     NSString *selectedClubAddress; 
     
+    UIButton *btnHeadingHere;
     UILabel *lblClubLabel;
     UIImageView *headBar; 
 }

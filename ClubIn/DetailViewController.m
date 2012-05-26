@@ -92,9 +92,26 @@
     lblClubLabel.text = selectedClubName;
     //add lblClubLabel to headbar subview.
     [headBar addSubview:lblClubLabel];
+   
+    //create button to allow user to signal he/she wishes to head to a particular club.
+    btnHeadingHere = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btnHeadingHere addTarget:self
+                       action:@selector(headingHere)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnHeadingHere setTitle:@"Heading Here" forState:UIControlStateNormal];
+    btnHeadingHere.frame = CGRectMake(90.0, 80.0, 140.0, 35.0);
+    //add btnHeadingHere to the view subview.
+    [view addSubview:btnHeadingHere];      
     
 }
 
+//method to handle signalling that a user will be heading to a particular club.
+-(void)headingHere {
+    
+    NSLog(@"Heading Here Button Clicked");
+    
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
