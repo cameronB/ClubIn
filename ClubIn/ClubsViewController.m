@@ -38,6 +38,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //initiate NSUserDefaults, store in defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Clear and remove NSUserDefaults keys to avoid corruption");
+    
+    //remove NSUserDefaults club related objects, so XML will be required to load changes.
+    [defaults removeObjectForKey:@"clubId"];
+    [defaults removeObjectForKey:@"clubName"];
+    [defaults removeObjectForKey:@"clubAddresses"];
+    [defaults removeObjectForKey:@"clubLatitudes"];
+    [defaults removeObjectForKey:@"clubLongitudes"];
+    [defaults removeObjectForKey:@"clubCheckIns"];
+    
     //set the navigation bar item.
     self.navigationItem.title = @"Night Clubs";
     
@@ -70,22 +83,9 @@
     listOfClubLatitudes = [[NSMutableArray alloc] init];
     listOfClubLongitudes = [[NSMutableArray alloc] init];
     
-    //if data exists in NSUserDefaults
-    if (dataRepresentingSavedArray != nil) {
+    if (dataRepresentingSavedArray == nil) {   
         
-        NSLog(@"NSUserDefaults loaded");
-        
-        //load NSUserDefaults, into relevent arrays, by keys.
-        listOfClubIds = [defaults objectForKey:@"clubId"];
-        listOfClubNames = [defaults objectForKey:@"clubName"];
-        listOfClubAddresses = [defaults objectForKey:@"clubAddresses"];
-        listOfClubLatitudes = [defaults objectForKey:@"clubLatitudes"];
-        listOfClubLongitudes = [defaults objectForKey:@"clubLongitudes"];
-        
-        //if no data exists in NSUserDefaults    
-    } else if (dataRepresentingSavedArray == nil) {   
-        
-        NSLog(@"NSUserDefaults dont exist, load data via XML");
+        NSLog(@"NSUserDefaults does not exist, load data via XML");
         
         //send URL to xmlParser
         xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.complr.com/ClubIn/includes/xml/clubs.php"];
@@ -211,11 +211,25 @@
 }
 
 - (void)addItem {
-    NSLog(@"Pull down refresh added");
+    //initiate NSUserDefaults, store in defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    //remove NSUserDefaults club related objects, so XML will be required to load changes.
+    [defaults removeObjectForKey:@"clubId"];
+    [defaults removeObjectForKey:@"clubName"];
+    [defaults removeObjectForKey:@"clubAddresses"];
+    [defaults removeObjectForKey:@"clubLatitudes"];
+    [defaults removeObjectForKey:@"clubLongitudes"];
+    [defaults removeObjectForKey:@"clubCheckIns"];
+    
+    //once again load the club data from XML as NSUserDefaults has been reset.
+    [self loadClubData];
+    
+    //reload the table view.
     [self.tableView reloadData];
     
-    [self stopLoading];}
+    [self stopLoading];
+}
 
 @end
 

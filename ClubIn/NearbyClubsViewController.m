@@ -146,6 +146,28 @@
 - (void)mapView:(MKMapView *)mapView 
  annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control { 
         
+    if ([(UIButton*)control buttonType] == UIButtonTypeDetailDisclosure){
+        
+        MapViewAnnotation *annotationTapped = (MapViewAnnotation *)view.annotation;
+        
+        //
+        NSString *test = annotationTapped.title;
+        
+        //Initialize the detail view controller and display it.
+        DetailViewController *dvController = [[DetailViewController alloc] init];
+        
+        //pass the club name to the detailViewController
+        dvController.selectedClubName = test;
+        
+        //push the details view controller
+        [self.navigationController pushViewController:dvController animated:YES];
+        
+        //release details view controller
+        [dvController release];
+        dvController = nil;    
+        
+    }
+    
 }
 
 

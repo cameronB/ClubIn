@@ -6,8 +6,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "XMLParser.h"
 #import <CoreLocation/CoreLocation.h>
+#import "DetailViewController.h"
 
 @interface NearbyClubsViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
 

@@ -48,6 +48,7 @@
 		9E2B5BF31570DB9600123B05 /* NearbyClubsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BF11570DB9600123B05 /* NearbyClubsViewController.m */; };
 		9E2B5BF51570DC0100123B05 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF41570DC0100123B05 /* MapKit.framework */; };
 		9E2B5BF71570DC0A00123B05 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */; };
+		9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		9E2B5BF11570DB9600123B05 /* NearbyClubsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyClubsViewController.m; sourceTree = "<group>"; };
 		9E2B5BF41570DC0100123B05 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9E2B5BFD1570F5CD00123B05 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,7 @@
 		9E2B5A92157056A800123B05 /* ClubIn */ = {
 			isa = PBXGroup;
 			children = (
+				9E2B5BFC1570F5A800123B05 /* DetailView */,
 				9E2B5BED1570DB1200123B05 /* ClubMap */,
 				9E2B5BE31570D82C00123B05 /* XMLParser */,
 				9E2B5BD41570D40100123B05 /* Images */,
@@ -342,6 +346,15 @@
 			name = ClubMap;
 			sourceTree = "<group>";
 		};
+		9E2B5BFC1570F5A800123B05 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9E2B5BFD1570F5CD00123B05 /* DetailViewController.h */,
+				9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,6 +489,7 @@
 				9E2B5BEC1570D96F00123B05 /* PullRefreshTableViewController.m in Sources */,
 				9E2B5BF21570DB9600123B05 /* MapViewAnnotation.m in Sources */,
 				9E2B5BF31570DB9600123B05 /* NearbyClubsViewController.m in Sources */,
+				9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

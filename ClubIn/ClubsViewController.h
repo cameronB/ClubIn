@@ -24,10 +24,7 @@
     NSMutableArray *listOfClubLatitudes;
     NSMutableArray *listOfClubLongitudes;
     
-    //The table view to hold each club 
     UITableView *menuTableView;
-    
-    //Array to contain the menu items.
     NSMutableArray *mainMenuItems;      
 }
 
