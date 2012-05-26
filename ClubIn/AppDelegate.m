@@ -44,7 +44,7 @@ static NSString* kAppId = @"211325022301565";
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     //set window background to white
-    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window setBackgroundColor:[UIColor blackColor]];
     
     //create navigation Controller
 	UINavigationController *localNavigationController;
@@ -52,6 +52,11 @@ static NSString* kAppId = @"211325022301565";
     //create TabBar controller
 	tabBarController = [[UITabBarController alloc] init];
     
+    //color for navigation bar
+    [self.tabBarController.tabBar setTintColor:[UIColor colorWithRed:90/255.0
+                                                                          green:10.0/255.0
+                                                                           blue:90.0/255.0
+                                                                          alpha:1.0]];      
     //tabBarController delegate
     tabBarController.delegate = self;
     
@@ -65,7 +70,12 @@ static NSString* kAppId = @"211325022301565";
 	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
     viewController1.title = @"Clubs";
     
-    [localNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    //color for navigation bar
+    [localNavigationController.navigationBar setTintColor:[UIColor colorWithRed:90/255.0
+                                                              green:10.0/255.0
+                                                               blue:90.0/255.0
+                                                              alpha:1.0]];
+    [localNavigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];    
     
 	[localControllersArray addObject:localNavigationController];
 	[localNavigationController release];
@@ -78,7 +88,12 @@ static NSString* kAppId = @"211325022301565";
 	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
     viewController3.title = @"My Profile";
     
-    [localNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    //color for navigation bar
+    [localNavigationController.navigationBar setTintColor:[UIColor colorWithRed:90/255.0
+                                                                          green:10.0/255.0
+                                                                           blue:90.0/255.0
+                                                                          alpha:1.0]];
+    [localNavigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];    
     
 	[localControllersArray addObject:localNavigationController];
 	[localNavigationController release];

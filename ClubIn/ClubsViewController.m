@@ -198,12 +198,12 @@
     //textLabel styles.
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     //detailTextLabel styles.
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:10.0];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
