@@ -193,17 +193,17 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //set the background image for the cell.
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell.png"]];
+    cell.backgroundColor = [UIColor whiteColor];
     
     //textLabel styles.
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor blueColor];
     
     //detailTextLabel styles.
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:10.0];
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor blueColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
