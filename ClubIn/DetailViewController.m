@@ -27,35 +27,6 @@
     [super dealloc];
 }
 
-//View did load.
--(void) viewDidLoad {
-    
-    [self initilizeClubData];
-}
-
-//based on the club name selected on the table view, retrieve specific club data.
-- (void) initilizeClubData {
-    
-    //initiate NSUserDefaults, store in defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    //load NSUserDefaults, into relevent arrays, by keys.
-    listOfClubNames = [defaults objectForKey:@"clubName"];
-    NSString *clubName = selectedClubName;
-    NSLog(@"club name %@", clubName);
-    
-    //return the index of the selectedClubId within userDefaults
-    NSUInteger index = [listOfClubNames indexOfObject:clubName];
-    
-    //store the club data in strings, retrieved via the index within the defaults array.
-    selectedClubId = [[defaults objectForKey:@"clubId"] objectAtIndex:index]; 
-    selectedClubName = [[defaults objectForKey:@"clubName"] objectAtIndex:index];
-    selectedClubAddress = [[defaults objectForKey:@"clubAddresses"] objectAtIndex:index];
-    selectedClubLatitude = [[defaults objectForKey:@"clubLatitudes"] objectAtIndex:index];
-    selectedClubLongitude = [[defaults objectForKey:@"clubLongitudes"] objectAtIndex:index];
-    
-}
-
 //initiate view programmatically.
 - (void) loadView {
     

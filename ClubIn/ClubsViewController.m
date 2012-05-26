@@ -38,19 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //initiate NSUserDefaults, store in defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    NSLog(@"Clear and remove NSUserDefaults keys to avoid corruption");
-    
-    //remove NSUserDefaults club related objects, so XML will be required to load changes.
-    [defaults removeObjectForKey:@"clubId"];
-    [defaults removeObjectForKey:@"clubName"];
-    [defaults removeObjectForKey:@"clubAddresses"];
-    [defaults removeObjectForKey:@"clubLatitudes"];
-    [defaults removeObjectForKey:@"clubLongitudes"];
-    [defaults removeObjectForKey:@"clubCheckIns"];
-    
     //set the navigation bar item.
     self.navigationItem.title = @"Night Clubs";
     
@@ -68,6 +55,11 @@
     [self loadClubData];   
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [self loadClubData];
+}
+
 //method to load the club data.
 //if NSUserDefaults is filled - load from NSUserDefaults, otherwise get from XML
 -(void) loadClubData {
@@ -83,9 +75,24 @@
     listOfClubLatitudes = [[NSMutableArray alloc] init];
     listOfClubLongitudes = [[NSMutableArray alloc] init];
     
-    if (dataRepresentingSavedArray == nil) {   
+    //if data exists in NSUserDefaults
+    if (dataRepresentingSavedArray != nil) {
         
-        NSLog(@"NSUserDefaults does not exist, load data via XML");
+        NSLog(@"NSUserDefaults loaded");
+        
+        //load NSUserDefaults, into relevent arrays, by keys.
+        listOfClubIds = [defaults objectForKey:@"clubId"];
+        listOfClubNames = [defaults objectForKey:@"clubName"];
+        listOfClubAddresses = [defaults objectForKey:@"clubAddresses"];
+        listOfClubLatitudes = [defaults objectForKey:@"clubLatitudes"];
+        listOfClubLongitudes = [defaults objectForKey:@"clubLongitudes"];
+        
+        [self.tableView reloadData];
+        
+        //if no data exists in NSUserDefaults    
+    } else if (dataRepresentingSavedArray == nil) {   
+        
+        NSLog(@"NSUserDefaults dont exist, load data via XML");
         
         //send URL to xmlParser
         xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.complr.com/ClubIn/includes/xml/clubs.php"];
@@ -204,7 +211,30 @@
     cell.detailTextLabel.textColor = [UIColor blackColor];
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //deselect the row once its pressed.
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];    
+    
+    //store the button tag (id) in int buttonTag
+    NSInteger buttonTag = indexPath.row;
+    
+    //Initialize the detail view controller and display it.
+	DetailViewController *dvController = [[DetailViewController alloc] init];
+    
+    dvController.selectedClubId = [listOfClubIds objectAtIndex:buttonTag];
+    dvController.selectedClubName = [listOfClubNames objectAtIndex:buttonTag];
+    dvController.selectedClubAddress = [listOfClubAddresses objectAtIndex:buttonTag];
+    dvController.selectedClubLatitude = [listOfClubLatitudes objectAtIndex:buttonTag];
+    dvController.selectedClubLongitude = [listOfClubLongitudes objectAtIndex:buttonTag];
+    
+    //push the details view controller
+	[self.navigationController pushViewController:dvController animated:YES];
+	
+    //release details view controller
+    [dvController release];
+	dvController = nil;    
+}
 
 - (void)refresh {
     [self performSelector:@selector(addItem) withObject:nil afterDelay:2.0];
