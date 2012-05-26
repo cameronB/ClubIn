@@ -55,11 +55,6 @@
     [self loadClubData];   
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    
-    [self loadClubData];
-}
-
 //method to load the club data.
 //if NSUserDefaults is filled - load from NSUserDefaults, otherwise get from XML
 -(void) loadClubData {

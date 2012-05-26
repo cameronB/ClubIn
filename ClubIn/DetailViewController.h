@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NearbyClubsViewController.h"
+#import "ClubMapViewController.h"
 
 @interface DetailViewController : UIViewController {
 

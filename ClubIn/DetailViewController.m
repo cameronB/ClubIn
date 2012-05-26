@@ -27,6 +27,43 @@
     [super dealloc];
 }
 
+//view did load
+-(void) viewDidLoad {
+    
+    //button for top of navigation bar.
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] 
+                                  initWithTitle:@"Map"                                            
+                                  style:UIBarButtonItemStyleBordered 
+                                  target:self 
+                                  action:@selector(loadClubMap:)];
+    //add to navigation right bar button item.
+    self.navigationItem.rightBarButtonItem = mapButton;
+    
+    //release mapButton.
+    [mapButton release];  
+}
+
+//called when map button is selected on detailsView.
+- (void)loadClubMap:(id)sender {
+   
+    //Initialize the detail view controller and display it.
+	ClubMapViewController *cmController = [[ClubMapViewController alloc] init];
+    
+    //pass the club name to the Map View that will display a certain club.
+    cmController.selectedClubId = selectedClubId;
+    cmController.selectedClubName = selectedClubName;
+    cmController.selectedClubAddress = selectedClubAddress;
+    cmController.selectedClubLatitude = selectedClubLatitude;
+    cmController.selectedClubLongitude = selectedClubLongitude;
+    
+    //push the details view controller.
+	[self.navigationController pushViewController:cmController animated:YES];
+    
+    //release particular club map view controller.
+    [cmController release];
+	cmController = nil;  
+}
+
 //initiate view programmatically.
 - (void) loadView {
     
