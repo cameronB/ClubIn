@@ -74,10 +74,10 @@
 
 - (void)addPullToRefreshHeader {
     refreshHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 - REFRESH_HEADER_HEIGHT, 320, REFRESH_HEADER_HEIGHT)];
-    refreshHeaderView.backgroundColor = [UIColor clearColor];
+    refreshHeaderView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell.png"]];   
 
     refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, REFRESH_HEADER_HEIGHT)];
-    refreshLabel.backgroundColor = [UIColor clearColor];
+    refreshLabel.backgroundColor = [UIColor whiteColor];
     refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
     refreshLabel.textAlignment = UITextAlignmentCenter;
 

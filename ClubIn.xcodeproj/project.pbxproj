@@ -35,13 +35,19 @@
 		9E2B5BC21570CF5700123B05 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BBB1570CF5700123B05 /* SBJsonParser.m */; };
 		9E2B5BC31570CF5700123B05 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BBD1570CF5700123B05 /* SBJsonWriter.m */; };
 		9E2B5BCF1570D08100123B05 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BCE1570D08100123B05 /* LoginViewController.m */; };
-		9E2B5BD21570D23800123B05 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BD11570D23800123B05 /* PullRefreshTableViewController.m */; };
 		9E2B5BDB1570D42800123B05 /* 24_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BD51570D42800123B05 /* 24_info.png */; };
 		9E2B5BDC1570D42800123B05 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BD61570D42800123B05 /* arrow.png */; };
 		9E2B5BDD1570D42800123B05 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BD71570D42800123B05 /* Default.png */; };
 		9E2B5BDE1570D42800123B05 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BD81570D42800123B05 /* logo.png */; };
 		9E2B5BE01570D42800123B05 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BDA1570D42800123B05 /* pin.png */; };
 		9E2B5BE21570D4DB00123B05 /* logoR.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B5BE11570D4DB00123B05 /* logoR.png */; };
+		9E2B5BE81570D87100123B05 /* ClubDetailsInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BE51570D87100123B05 /* ClubDetailsInterface.m */; };
+		9E2B5BE91570D87100123B05 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BE71570D87100123B05 /* XMLParser.m */; };
+		9E2B5BEC1570D96F00123B05 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BEB1570D96F00123B05 /* PullRefreshTableViewController.m */; };
+		9E2B5BF21570DB9600123B05 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BEF1570DB9600123B05 /* MapViewAnnotation.m */; };
+		9E2B5BF31570DB9600123B05 /* NearbyClubsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BF11570DB9600123B05 /* NearbyClubsViewController.m */; };
+		9E2B5BF51570DC0100123B05 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF41570DC0100123B05 /* MapKit.framework */; };
+		9E2B5BF71570DC0A00123B05 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,14 +110,24 @@
 		9E2B5BBD1570CF5700123B05 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		9E2B5BCD1570D08100123B05 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9E2B5BCE1570D08100123B05 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		9E2B5BD01570D23800123B05 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
-		9E2B5BD11570D23800123B05 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		9E2B5BD51570D42800123B05 /* 24_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 24_info.png; sourceTree = "<group>"; };
 		9E2B5BD61570D42800123B05 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		9E2B5BD71570D42800123B05 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9E2B5BD81570D42800123B05 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9E2B5BDA1570D42800123B05 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		9E2B5BE11570D4DB00123B05 /* logoR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoR.png; path = ../logoR.png; sourceTree = "<group>"; };
+		9E2B5BE41570D87100123B05 /* ClubDetailsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubDetailsInterface.h; sourceTree = "<group>"; };
+		9E2B5BE51570D87100123B05 /* ClubDetailsInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubDetailsInterface.m; sourceTree = "<group>"; };
+		9E2B5BE61570D87100123B05 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		9E2B5BE71570D87100123B05 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		9E2B5BEA1570D96F00123B05 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		9E2B5BEB1570D96F00123B05 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		9E2B5BEE1570DB9600123B05 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		9E2B5BEF1570DB9600123B05 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
+		9E2B5BF01570DB9600123B05 /* NearbyClubsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyClubsViewController.h; sourceTree = "<group>"; };
+		9E2B5BF11570DB9600123B05 /* NearbyClubsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyClubsViewController.m; sourceTree = "<group>"; };
+		9E2B5BF41570DC0100123B05 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2B5BF71570DC0A00123B05 /* CoreLocation.framework in Frameworks */,
+				9E2B5BF51570DC0100123B05 /* MapKit.framework in Frameworks */,
 				9E2B5AC715705C3200123B05 /* QuartzCore.framework in Frameworks */,
 				9E2B5A8D157056A800123B05 /* UIKit.framework in Frameworks */,
 				9E2B5A8F157056A800123B05 /* Foundation.framework in Frameworks */,
@@ -161,6 +179,8 @@
 		9E2B5A8B157056A800123B05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */,
+				9E2B5BF41570DC0100123B05 /* MapKit.framework */,
 				9E2B5AC615705C3200123B05 /* QuartzCore.framework */,
 				9E2B5A8C157056A800123B05 /* UIKit.framework */,
 				9E2B5A8E157056A800123B05 /* Foundation.framework */,
@@ -173,6 +193,8 @@
 		9E2B5A92157056A800123B05 /* ClubIn */ = {
 			isa = PBXGroup;
 			children = (
+				9E2B5BED1570DB1200123B05 /* ClubMap */,
+				9E2B5BE31570D82C00123B05 /* XMLParser */,
 				9E2B5BD41570D40100123B05 /* Images */,
 				9E2B5BCC1570D07100123B05 /* Login */,
 				9E2B5BC41570CFDB00123B05 /* PullToRefresh */,
@@ -270,8 +292,8 @@
 		9E2B5BC41570CFDB00123B05 /* PullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				9E2B5BD01570D23800123B05 /* PullRefreshTableViewController.h */,
-				9E2B5BD11570D23800123B05 /* PullRefreshTableViewController.m */,
+				9E2B5BEA1570D96F00123B05 /* PullRefreshTableViewController.h */,
+				9E2B5BEB1570D96F00123B05 /* PullRefreshTableViewController.m */,
 			);
 			name = PullToRefresh;
 			sourceTree = "<group>";
@@ -296,6 +318,28 @@
 				9E2B5BDA1570D42800123B05 /* pin.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		9E2B5BE31570D82C00123B05 /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				9E2B5BE41570D87100123B05 /* ClubDetailsInterface.h */,
+				9E2B5BE51570D87100123B05 /* ClubDetailsInterface.m */,
+				9E2B5BE61570D87100123B05 /* XMLParser.h */,
+				9E2B5BE71570D87100123B05 /* XMLParser.m */,
+			);
+			name = XMLParser;
+			sourceTree = "<group>";
+		};
+		9E2B5BED1570DB1200123B05 /* ClubMap */ = {
+			isa = PBXGroup;
+			children = (
+				9E2B5BEE1570DB9600123B05 /* MapViewAnnotation.h */,
+				9E2B5BEF1570DB9600123B05 /* MapViewAnnotation.m */,
+				9E2B5BF01570DB9600123B05 /* NearbyClubsViewController.h */,
+				9E2B5BF11570DB9600123B05 /* NearbyClubsViewController.m */,
+			);
+			name = ClubMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +471,11 @@
 				9E2B5BC21570CF5700123B05 /* SBJsonParser.m in Sources */,
 				9E2B5BC31570CF5700123B05 /* SBJsonWriter.m in Sources */,
 				9E2B5BCF1570D08100123B05 /* LoginViewController.m in Sources */,
-				9E2B5BD21570D23800123B05 /* PullRefreshTableViewController.m in Sources */,
+				9E2B5BE81570D87100123B05 /* ClubDetailsInterface.m in Sources */,
+				9E2B5BE91570D87100123B05 /* XMLParser.m in Sources */,
+				9E2B5BEC1570D96F00123B05 /* PullRefreshTableViewController.m in Sources */,
+				9E2B5BF21570DB9600123B05 /* MapViewAnnotation.m in Sources */,
+				9E2B5BF31570DB9600123B05 /* NearbyClubsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
