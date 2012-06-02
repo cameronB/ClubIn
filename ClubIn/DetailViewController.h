@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NearbyClubsViewController.h"
 #import "ClubMapViewController.h"
+#import "HeadingHereViewController.h"
 
 @interface DetailViewController : UIViewController {
 

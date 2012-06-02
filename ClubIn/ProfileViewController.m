@@ -39,7 +39,7 @@
                                                   mainScreen].applicationFrame];
     
     //add background default_bg image to view
-    view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]];
+    view.backgroundColor = [UIColor whiteColor];
     
     self.view = view;
     [view release];
@@ -64,7 +64,7 @@
     nameLabel.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     nameLabel.textAlignment = UITextAlignmentCenter;
     nameLabel.backgroundColor = [UIColor clearColor];
-    nameLabel.textColor = [UIColor whiteColor];
+    nameLabel.textColor = [UIColor blueColor];
     nameLabel.text = @"";
     
     // Get the profile image

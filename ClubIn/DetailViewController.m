@@ -72,7 +72,7 @@
                                                   mainScreen].applicationFrame];
     
     //set background image.
-    view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]];
+    view.backgroundColor = [UIColor whiteColor];
     
     self.title = @"Club Details";
     
@@ -82,24 +82,17 @@
     //release view.
     [view release];
     
-    //allocate headerBar at top of view.
-    headBar = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 50.0)];
-    headBar.image=[UIImage imageNamed:@"headerBar.png"];
-    
-    //add headerView to subview.
-    [view addSubview:headBar];
-    
     //allocate club label.
     lblClubLabel = [[UILabel alloc]
                     initWithFrame:CGRectMake(0, 2.5, 320.0, 40.0)];
     lblClubLabel.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     lblClubLabel.textAlignment = UITextAlignmentCenter;
-    lblClubLabel.textColor = [UIColor whiteColor];
+    lblClubLabel.textColor = [UIColor blueColor];
     lblClubLabel.backgroundColor = [UIColor clearColor];
     //set text as selected club.
     lblClubLabel.text = selectedClubName;
     //add lblClubLabel to headbar subview.
-    [headBar addSubview:lblClubLabel];
+    [view addSubview:lblClubLabel];
    
     //create button to allow user to signal he/she wishes to head to a particular club.
     btnHeadingHere = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -118,6 +111,8 @@
 -(void)headingHere {
     
     NSLog(@"Heading Here Button Clicked");
+    HeadingHereViewController *headingHereViewController = [[HeadingHereViewController alloc] init];
+    [self.navigationController presentModalViewController:headingHereViewController animated:YES];
     
 }
 

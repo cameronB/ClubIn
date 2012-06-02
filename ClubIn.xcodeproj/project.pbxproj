@@ -50,6 +50,7 @@
 		9E2B5BF71570DC0A00123B05 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */; };
 		9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */; };
 		9E2B5C0215711E8900123B05 /* ClubMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5C0115711E8900123B05 /* ClubMapViewController.m */; };
+		9EDCE27D157A1FCB0033E912 /* HeadingHereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,8 @@
 		9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9E2B5C0015711E8900123B05 /* ClubMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubMapViewController.h; sourceTree = "<group>"; };
 		9E2B5C0115711E8900123B05 /* ClubMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubMapViewController.m; sourceTree = "<group>"; };
+		9EDCE27B157A1FCB0033E912 /* HeadingHereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingHereViewController.h; sourceTree = "<group>"; };
+		9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingHereViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,7 @@
 		9E2B5A92157056A800123B05 /* ClubIn */ = {
 			isa = PBXGroup;
 			children = (
+				9EDCE279157A1FB60033E912 /* HeadingHereView */,
 				9E2B5BFC1570F5A800123B05 /* DetailView */,
 				9E2B5BED1570DB1200123B05 /* ClubMap */,
 				9E2B5BE31570D82C00123B05 /* XMLParser */,
@@ -360,6 +364,15 @@
 			name = DetailView;
 			sourceTree = "<group>";
 		};
+		9EDCE279157A1FB60033E912 /* HeadingHereView */ = {
+			isa = PBXGroup;
+			children = (
+				9EDCE27B157A1FCB0033E912 /* HeadingHereViewController.h */,
+				9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */,
+			);
+			name = HeadingHereView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +509,7 @@
 				9E2B5BF31570DB9600123B05 /* NearbyClubsViewController.m in Sources */,
 				9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */,
 				9E2B5C0215711E8900123B05 /* ClubMapViewController.m in Sources */,
+				9EDCE27D157A1FCB0033E912 /* HeadingHereViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
