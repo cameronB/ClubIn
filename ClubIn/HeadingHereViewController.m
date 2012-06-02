@@ -10,8 +10,11 @@
 
 @implementation HeadingHereViewController
 
+@synthesize viewClubName;
+
 -(void)dealloc {
     [super dealloc];
+    [viewClubName release];
 }
 
 
@@ -24,9 +27,23 @@
 
     //set background image.
     view.backgroundColor = [UIColor whiteColor];
-
     //set self view as view.
     self.view = view;
+    //release view.
+    [view release];
+    
+    //allocate club label.
+    clubNameLabel = [[UILabel alloc]
+                    initWithFrame:CGRectMake(0, 2.5, 320.0, 40.0)];
+    clubNameLabel.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    clubNameLabel.textAlignment = UITextAlignmentCenter;
+    clubNameLabel.textColor = [UIColor blueColor];
+    clubNameLabel.backgroundColor = [UIColor clearColor];
+    //set text as selected club.
+    clubNameLabel.text = viewClubName;
+    //add lblClubLabel to headbar subview.
+    [view addSubview:clubNameLabel];
+    
     
     //add close button to view.
     closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -34,13 +51,10 @@
     [closeButton setTitle:@"X" forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     closeButton.backgroundColor = [UIColor whiteColor];
-    closeButton.frame = CGRectMake(285.0, 00.0, 35.0, 35.0);
+    closeButton.frame = CGRectMake(285.0, 2.5, 35.0, 35.0);
     //add btnHeadingHere to the view subview.
     [view addSubview:closeButton];        
-    
 
-    //release view.
-    [view release];
 }
 
 - (void) close {

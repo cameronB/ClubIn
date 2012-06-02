@@ -112,8 +112,14 @@
     
     NSLog(@"Heading Here Button Clicked");
     HeadingHereViewController *headingHereViewController = [[HeadingHereViewController alloc] init];
+    
+    headingHereViewController.viewClubName = selectedClubName;
+    
     [self.navigationController presentModalViewController:headingHereViewController animated:YES];
     
+    //release details view controller
+    [headingHereViewController release];
+	headingHereViewController = nil;      
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

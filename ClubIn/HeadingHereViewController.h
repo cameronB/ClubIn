@@ -10,9 +10,16 @@
 
 @interface HeadingHereViewController : UIViewController {
     
-    //declare closebutton
+    //declare closebutton.
     UIButton *closeButton;
+    //declare heading label
+    UILabel *clubNameLabel;
+    
+    //decalre clubName as string.
+    NSString *viewClubName;
     
 }
+
+@property (nonatomic, retain) NSString *viewClubName;
 
 @end
