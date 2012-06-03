@@ -8,17 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeadingHereViewController : UIViewController {
+@interface HeadingHereViewController : UIViewController <UIPickerViewDelegate, UITextFieldDelegate> {
     
-    //declare closebutton.
+    IBOutlet UIDatePicker *datePicker;
+    IBOutlet UIButton *datButton;
+    
     UIButton *closeButton;
-    //declare heading label
     UILabel *clubNameLabel;
-    
-    //decalre clubName as string.
+    UIButton *submitButton;
     NSString *viewClubName;
     
 }
+
+@property (nonatomic, retain) UIDatePicker *datePicker;
+@property (nonatomic, retain) IBOutlet UIButton *dateButton;
 
 @property (nonatomic, retain) NSString *viewClubName;
 
