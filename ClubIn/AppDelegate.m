@@ -11,6 +11,7 @@
 //Tab Bar Classes
 #import "ClubsViewController.h"
 #import "ProfileViewController.h"
+#import "FriendsViewController.h"
 
 //static string for app (facebook) id
 static NSString* kAppId = @"211325022301565";
@@ -82,11 +83,11 @@ static NSString* kAppId = @"211325022301565";
 	[viewController1 release];
     
     //Profile Tab Bar Controller / Navigation Controller / View
-    ProfileViewController *viewController3;
-	viewController3 = [[ProfileViewController alloc] init];
-	localNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController3];
+    ProfileViewController *viewController2;
+	viewController2 = [[ProfileViewController alloc] init];
+	localNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController2];
 	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
-    viewController3.title = @"My Profile";
+    viewController2.title = @"My Profile";
     
     //color for navigation bar
     [localNavigationController.navigationBar setTintColor:[UIColor colorWithRed:90/255.0
@@ -97,7 +98,25 @@ static NSString* kAppId = @"211325022301565";
     
 	[localControllersArray addObject:localNavigationController];
 	[localNavigationController release];
-	[viewController3 release];   
+	[viewController2 release];  
+    
+    //Friends Tab Bar Controller / Navigation Controller / View
+    FriendsViewController *viewController3;
+	viewController3 = [[FriendsViewController alloc] init];
+	localNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController3];
+	localNavigationController.tabBarItem.image = [UIImage imageNamed:@"24_info.png"];
+    viewController3.title = @"Friends";
+    
+    //color for navigation bar
+    [localNavigationController.navigationBar setTintColor:[UIColor colorWithRed:90/255.0
+                                                                          green:10.0/255.0
+                                                                           blue:90.0/255.0
+                                                                          alpha:1.0]];
+    [localNavigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];    
+    
+	[localControllersArray addObject:localNavigationController];
+	[localNavigationController release];
+	[viewController3 release]; 
     
     //load up our tab bar controller with the view controllers
 	tabBarController.viewControllers = localControllersArray;

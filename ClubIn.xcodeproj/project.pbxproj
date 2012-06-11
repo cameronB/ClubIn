@@ -50,6 +50,7 @@
 		9E2B5BF71570DC0A00123B05 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B5BF61570DC0A00123B05 /* CoreLocation.framework */; };
 		9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */; };
 		9E2B5C0215711E8900123B05 /* ClubMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5C0115711E8900123B05 /* ClubMapViewController.m */; };
+		9EC96EB515860B09002A9D44 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC96EB415860B09002A9D44 /* FriendsViewController.m */; };
 		9EDCE27D157A1FCB0033E912 /* HeadingHereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +136,8 @@
 		9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9E2B5C0015711E8900123B05 /* ClubMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubMapViewController.h; sourceTree = "<group>"; };
 		9E2B5C0115711E8900123B05 /* ClubMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubMapViewController.m; sourceTree = "<group>"; };
+		9EC96EB315860B09002A9D44 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		9EC96EB415860B09002A9D44 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		9EDCE27B157A1FCB0033E912 /* HeadingHereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingHereViewController.h; sourceTree = "<group>"; };
 		9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingHereViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +254,8 @@
 		9E2B5ABB157056BF00123B05 /* TabbarControllerViews */ = {
 			isa = PBXGroup;
 			children = (
+				9EC96EB315860B09002A9D44 /* FriendsViewController.h */,
+				9EC96EB415860B09002A9D44 /* FriendsViewController.m */,
 				9E2B5ABC157056F700123B05 /* ClubsViewController.h */,
 				9E2B5ABD157056F700123B05 /* ClubsViewController.m */,
 				9E2B5AC315705B2F00123B05 /* ProfileViewController.h */,
@@ -510,6 +515,7 @@
 				9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */,
 				9E2B5C0215711E8900123B05 /* ClubMapViewController.m in Sources */,
 				9EDCE27D157A1FCB0033E912 /* HeadingHereViewController.m in Sources */,
+				9EC96EB515860B09002A9D44 /* FriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
