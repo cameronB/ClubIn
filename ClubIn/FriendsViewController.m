@@ -16,6 +16,35 @@
     //set the navigation bar item title.
     self.navigationItem.title = @"Fellow Clubbers";
     
+    [self apiGraphFriends];
+}
+
+#pragma mark - Facebook API Calls
+/*
+ * Graph API: Method to get the user's friends.
+ */
+- (void)apiGraphFriends {
+    NSLog(@"Graph user friends");
+    // Do not set current API as this is commonly called by other methods
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[delegate facebook] requestWithGraphPath:@"me/friends" andDelegate:self];
+
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+    NSLog(@"%@", result);
+    
+    if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
+        result = [result objectAtIndex:0];
+    }
+    
+    int test = [result count];
+    
+    if ([result count] > 0) {
+        NSLog(@"found friends%i ", test);
+    } else {
+        NSLog(@"no friends found");
+    }
 }
 
 - (void)viewDidUnload
@@ -29,18 +58,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

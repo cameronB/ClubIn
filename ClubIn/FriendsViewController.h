@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
+#import "AppDelegate.h"
 
-@interface FriendsViewController : UITableViewController
+@interface FriendsViewController : UITableViewController <FBSessionDelegate, FBDialogDelegate, FBRequestDelegate> {
+    
+}
 
 @end
