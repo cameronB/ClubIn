@@ -72,9 +72,16 @@
 }
 
 -(void)viewDidLoad {
-
+    
     //set the navigation bar item title.
     self.navigationItem.title = @"Friends";
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+
+    //For now reloading and regraphing friends each time view is loaded.
+    [self showLoadingView];
     
     //graph the logged in users friends.
     [self apiGraphFriends];
@@ -158,7 +165,7 @@
         [friendIds addObject:[friend objectForKey:@"id"]];
         [friendNames addObject:[friend objectForKey:@"name"]];
     }
-
+    
     //hide the activity indicator
     [self hideLoadingView];    
 }

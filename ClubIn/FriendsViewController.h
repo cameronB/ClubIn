@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "PullRefreshTableViewController.h"
 
-@interface FriendsViewController : UIViewController <FBSessionDelegate, FBDialogDelegate, FBRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface FriendsViewController : UIViewController <FBRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
     
     //array to store the API graph results for me/friends.
     NSArray *items;
