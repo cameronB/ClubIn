@@ -51,6 +51,7 @@
 		9E2B5BFF1570F5CD00123B05 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5BFE1570F5CD00123B05 /* DetailViewController.m */; };
 		9E2B5C0215711E8900123B05 /* ClubMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B5C0115711E8900123B05 /* ClubMapViewController.m */; };
 		9EC96EB515860B09002A9D44 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC96EB415860B09002A9D44 /* FriendsViewController.m */; };
+		9EC96ECB1588B004002A9D44 /* MenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC96ECA1588B004002A9D44 /* MenuButton.png */; };
 		9EDCE27D157A1FCB0033E912 /* HeadingHereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		9E2B5C0115711E8900123B05 /* ClubMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubMapViewController.m; sourceTree = "<group>"; };
 		9EC96EB315860B09002A9D44 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		9EC96EB415860B09002A9D44 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		9EC96ECA1588B004002A9D44 /* MenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButton.png; sourceTree = "<group>"; };
 		9EDCE27B157A1FCB0033E912 /* HeadingHereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingHereViewController.h; sourceTree = "<group>"; };
 		9EDCE27C157A1FCB0033E912 /* HeadingHereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingHereViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -326,6 +328,7 @@
 		9E2B5BD41570D40100123B05 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9EC96ECA1588B004002A9D44 /* MenuButton.png */,
 				9E2B5BE11570D4DB00123B05 /* logoR.png */,
 				9E2B5BD51570D42800123B05 /* 24_info.png */,
 				9E2B5BD61570D42800123B05 /* arrow.png */,
@@ -457,6 +460,7 @@
 				9E2B5BDE1570D42800123B05 /* logo.png in Resources */,
 				9E2B5BE01570D42800123B05 /* pin.png in Resources */,
 				9E2B5BE21570D4DB00123B05 /* logoR.png in Resources */,
+				9EC96ECB1588B004002A9D44 /* MenuButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
