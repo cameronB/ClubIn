@@ -76,9 +76,23 @@
     //set the navigation bar item title.
     self.navigationItem.title = @"Friends";
     
+    //create a button on the top bar to navigate to the map (for all clubs)
+    UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] 
+                                  initWithTitle:@"Refresh"                                            
+                                  style:UIBarButtonItemStyleBordered 
+                                  target:self 
+                                  action:@selector(refreshFriends)];
+    self.navigationItem.rightBarButtonItem = reloadButton;
+    //release mapButton
+    [reloadButton release]; 
+    
+    //graph facebook friends of logged in user
+    [self apiGraphFriends];
+    
 }
 
--(void)viewDidAppear:(BOOL)animated {
+//method to refresh friends
+-(void)refreshFriends {
 
     //For now reloading and regraphing friends each time view is loaded.
     [self showLoadingView];
